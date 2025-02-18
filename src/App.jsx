@@ -1,6 +1,9 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import ToDoItem from './ToDo'
+import Paper from '@mui/material/Paper';
+import Card from "@mui/material/Card";
+import classes from './styles.module.css';
 
 function App() {
 
@@ -37,16 +40,16 @@ function App() {
 
 
   return (
-    <>
-    <h1 className="text-5xl font-bold text-cyan-600 mb-8">To-do App</h1>
+    <div className={classes.mainWrapper}>
+      <h1 className="text-5xl font-bold text-cyan-600 mb-8">To-do App</h1>
 
-    <div>
-      {
-        ToDoList && ToDoList.length > 0 ?
-        ToDoList.map((todoItem, index)=> <ToDoItem todo={todoItem} key={index} />) : null
-      }
-    </div> 
-    </>
+      <div className={classes.todoListWrapper}>
+        {
+          ToDoList && ToDoList.length > 0 ?
+          ToDoList.map((todoItem, index)=> <ToDoItem todo={todoItem} key={index} />) : null
+        }
+      </div> 
+    </div>
   )
 }
 
