@@ -1,10 +1,9 @@
 import Card from "@mui/material/Card"
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { CardActions, CardContent } from "@mui/material";
 
-function ToDoItem({todo}) {
+function ToDoItem({todo, fetchDetailsOfCurrentTodo}) {
   
   return (
     <Card sx={{
@@ -14,10 +13,12 @@ function ToDoItem({todo}) {
         justifyContent: "space-between",
       }}>
       <CardContent>
-        <Typography vriant="h5" color={"text.secondary"}>{todo?.todo}</Typography>
+        <Typography variant="h5" color={"text.secondary"}>{todo?.todo}</Typography>
       </CardContent>
       <CardActions>
-        <Button sx={{
+        <Button
+         onClick={()=>fetchDetailsOfCurrentTodo(todo?.id)}
+         sx={{
           backgroundColor: '#000',
           color: '#fff',
           opacity: '0.75',
