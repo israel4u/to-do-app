@@ -1,7 +1,8 @@
 import Card from "@mui/material/Card"
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { CardActions, CardContent } from "@mui/material";
+import CardContent from "@mui/material/CardContent"
+import CardActions from "@mui/material/CardActions";
 
 function ToDoItem({todo, fetchDetailsOfCurrentTodo}) {
   
